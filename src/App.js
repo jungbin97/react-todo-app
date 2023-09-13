@@ -1,6 +1,6 @@
 import {useState} from "react";
 import "./App.css";
-import List from "./components/List";
+import List from "./components/Lists";
 import Form from "./components/Form";
 export default function App() {
 
@@ -8,7 +8,7 @@ export default function App() {
   const [value, setValue] = useState("");
 
     const handleSubmit = (e) => {
-      // form 안에 input을 전송할 때 페이지 리로드 되는 걸 막아줌
+      // form 안에 input을 전송할 때 페이지 리로드 되는 P걸 막아줌
       e.preventDefault();
 
       //새로운 할일 데이터
