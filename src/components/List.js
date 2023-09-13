@@ -16,6 +16,7 @@ const List = React.memo(({
         const handleClick = (id) =>{
             let newTodoData = todoData.filter(data => data.id !== id);
             setTodoData(newTodoData);
+            localStorage.setItem("todoData", JSON.stringify(newTodoData));
         };
 
         
@@ -27,13 +28,16 @@ const List = React.memo(({
             return data;
         })
             setTodoData(newTodoData);
+            localStorage.setItem('todoData', JSON.stringify([...todoData, newTodoData]));
         };
 
         const handleEditChange = (event) => {
             setEditedTitle(event.target.value);
         }
 
-        const handleSubmit = () => {
+        const handleSubmit = (event) => {
+            event.preventDefault();
+            
             let newTodoData = todoData.map((data) => {
                 if(data.id === id){
                     data.title = editedTitle;
