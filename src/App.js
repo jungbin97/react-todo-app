@@ -2,8 +2,9 @@ import {useState} from "react";
 import "./App.css";
 import Lists from "./components/Lists";
 import Form from "./components/Form";
-export default function App() {
 
+export default function App() {
+  console.log('App component')
   const [todoData, setTodoData] = useState([]);
   const [value, setValue] = useState("");
 

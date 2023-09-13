@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function Form({handleSubmit, value, setValue}) {
-
+    console.log('Form Component');
     const handleChange = (e) => {
         setValue(e.target.value);
     };
@@ -9,7 +9,7 @@ export default function Form({handleSubmit, value, setValue}) {
 
     return (
     <div>
-        <form onSubmit={handleSubmit} className='flex pt-2'>
+        <form onSubmit={handleSubmit} className='flex pt-4'>
             <input 
                 className='w-full px-3 py-2 mr-4 text-gray-500 border rounded shadow'
                 type="text" 
